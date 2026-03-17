@@ -1,66 +1,45 @@
 # JavaScript Loops Assignment
 
-## About the Project
+## About this project
 
-This project is a simple JavaScript program where I used loops and conditions to perform different operations on a number.
+In this assignment, I used JavaScript loops and conditions to perform different operations on a number entered by the user.
 
-The user enters a number, and the program calculates and displays various results like sum, table, factors, prime check, etc.
+The goal was to practice how loops work (for and while) and how conditions (if-else) are used in real problems.
 
-## How to Run
+## What the program does
 
-1. Open the project folder
+For a given number, the program:
 
-2. Make sure these files are present:
-
-   * index.html
-   * script.js
-   * style.css
-
-3. Open `index.html` in your browser
-
-4. Enter a number and click **Run**
-
-5. The output will be displayed on the screen
-
-## What the Program Does
-
-For the given number, it performs:
-
-* Finds sum of first n numbers
-* Prints multiplication table
+* Finds the sum of first n numbers
+* Prints the multiplication table
 * Checks if the number is prime
 * Finds all factors
 * Finds sum of digits
-* Checks if the number is Armstrong
+* Checks if it is an Armstrong number
 
-## Logic Used
+## How to run
 
-* **For loop** → used when number of iterations is known
-* **While loop** → used for digit extraction
-* **If-else** → used for conditions like prime and Armstrong
+1. Open the folder
+2. Open index.html in a browser
+3. Enter a number
+4. Click Run
+5. Output will be shown on screen
 
-## Example
+## What I learned
 
-Input: 153
+* I understood how **for loops** are useful when the number of iterations is known
+* I used **while loops** for extracting digits
+* I learned how to check prime numbers using loops
+* I understood Armstrong logic by raising digits to power
+* I also learned that checking till √n is enough for prime numbers
 
-Output:
+## Challenges I faced
 
-* Sum of digits: 9
-* Armstrong: Yes
-* Prime: No
-* Factors: 1 3 17 51 153
+* Armstrong number was confusing at first (especially counting digits)
+* I initially checked prime numbers till n, but later improved it
+* Managing multiple loops in one program was a bit tricky
 
----
+## Conclusion
 
-##  Technologies Used
+This assignment helped me understand loops and conditions better by applying them to real problems instead of just theory.
 
-* HTML
-* CSS
-* JavaScript
-
-##  Files
-
-* index.html
-* style.css
-* script.js
-* README.md

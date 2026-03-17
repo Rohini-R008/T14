@@ -1,146 +1,102 @@
-// Main function 
 function runProgram() {
 
     let n = parseInt(document.getElementById("num").value);
 
+    // basic validation
     if (isNaN(n)) {
-        document.getElementById("output").innerText = "Enter a valid number";
+        document.getElementById("output").innerText = "Please enter a number";
         return;
     }
 
-    let result = "";
-
-    result += "Number: " + n + "\n\n";
-
-    result += "Sum of first " + n + " numbers: " + sumOfFirstN(n) + "\n\n";
-
-    result += "Table of " + n + ":\n";
-    result += getTable(n) + "\n";
-
-    result += "Prime: " + (isPrimeNumber(n) ? "Yes" : "No") + "\n\n";
-
-    result += "Factors: " + getFactors(n) + "\n\n";
-
-    result += "Sum of digits: " + sumOfDigits(n) + "\n\n";
-
-    result += "Armstrong: " + (isArmstrongNumber(n) ? "Yes" : "No");
-
-    document.getElementById("output").innerText = result;
-}
-
-
-/* ---------------- FUNCTIONS ---------------- */
-
-
-// 1. Sum of first n numbers
-function sumOfFirstN(n) {
-    let sum = 0;
-
-    // Loop runs from 1 to n and keeps adding
-    for (let i = 1; i <= n; i++) {
-        sum = sum + i;
+    if (n <= 0) {
+        document.getElementById("output").innerText = "Enter a positive number greater than 0";
+        return;
     }
 
-    return sum;
-}
+    let output = "";
+
+    // -------- sum of first n numbers --------
+    let sum = 0;
+    for (let i = 1; i <= n; i++) {
+        sum += i;
+    }
+    output += "Sum of first " + n + " numbers: " + sum + "\n\n";
 
 
-// 2. Table of n
-function getTable(n) {
-    let text = "";
-
-    // Loop from 1 to 10 to generate multiplication table
+    // -------- table --------
+    output += "Table of " + n + ":\n";
     for (let i = 1; i <= 10; i++) {
-        text += n + " x " + i + " = " + (n * i) + "\n";
+        output += n + " x " + i + " = " + (n * i) + "\n";
     }
-
-    return text;
-}
+    output += "\n";
 
 
-// 3. Check Prime Number
-function isPrimeNumber(n) {
+    // -------- prime check --------
+    let isPrime = true;
 
-    // Numbers <= 1 are not prime
-    if (n <= 1) {
-        return false;
-    }
-
-    // Try dividing n by all numbers from 2 to n-1
-    for (let i = 2; i < n; i++) {
-
-        // If divisible, it is NOT prime
-        if (n % i === 0) {
-            return false;
+    if (n === 1) {
+        isPrime = false;
+    } else {
+        // checking till sqrt(n) is enough
+        // because factors come in pairs
+        for (let i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i === 0) {
+                isPrime = false;
+                break;
+            }
         }
     }
 
-    // If no divisor found, it is prime
-    return true;
-}
+    output += "Prime: " + (isPrime ? "Yes" : "No") + "\n\n";
 
 
-// 4. Get Factors
-function getFactors(n) {
-    let factors = "";
-
-    // Check all numbers from 1 to n
+    // -------- factors --------
+    output += "Factors: ";
     for (let i = 1; i <= n; i++) {
-
-        // If i divides n exactly, it's a factor
         if (n % i === 0) {
-            factors += i + " ";
+            output += i + " ";
         }
     }
-
-    return factors;
-}
+    output += "\n\n";
 
 
-// 5. Sum of digits
-function sumOfDigits(n) {
-
+    // -------- sum of digits --------
     let temp = n;
-    let sum = 0;
+    let digitSum = 0;
 
-    // Keep extracting last digit until number becomes 0
     while (temp > 0) {
-
-        let digit = temp % 10;   // get last digit
-        sum = sum + digit;       // add it
-        temp = Math.floor(temp / 10); // remove last digit
-    }
-
-    return sum;
-}
-
-
-// 6. Armstrong Number 
-function isArmstrongNumber(n) {
-
-    let temp = n;
-    let digits = 0;
-
-    // Step 1: Count number of digits
-    let countTemp = n;
-    while (countTemp > 0) {
-        digits++;
-        countTemp = Math.floor(countTemp / 10);
-    }
-
-    let sum = 0;
-
-    // Step 2: Calculate sum of digits^digits
-    while (temp > 0) {
-
-        let digit = temp % 10;
-
-        // Raise digit to power = number of digits
-        sum = sum + Math.pow(digit, digits);
-
+        let d = temp % 10;
+        digitSum += d;
         temp = Math.floor(temp / 10);
     }
 
-    // Step 3: Compare
-    return sum === n;
+    output += "Sum of digits: " + digitSum + "\n\n";
+
+
+    // -------- armstrong --------
+    let count = 0;
+    let temp1 = n;
+
+    // count digits
+    while (temp1 > 0) {
+        count++;
+        temp1 = Math.floor(temp1 / 10);
+    }
+
+    let temp2 = n;
+    let armSum = 0;
+
+    while (temp2 > 0) {
+        let d = temp2 % 10;
+        armSum += Math.pow(d, count);
+        temp2 = Math.floor(temp2 / 10);
+    }
+
+    if (armSum === n) {
+        output += "Armstrong: Yes";
+    } else {
+        output += "Armstrong: No";
+    }
+
+    document.getElementById("output").innerText = output;
 }
