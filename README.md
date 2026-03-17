@@ -1,18 +1,17 @@
 # JavaScript Loops Assignment
 
-## 📌 Project Description
+##  Project Description
 
 This project demonstrates the use of loops and conditional statements in JavaScript by performing multiple operations on a given number.
 
-The program takes a number as input and performs various calculations such as sum, table generation, prime check, factor listing, digit sum, and Armstrong number check.
+The program takes a number as input and performs various calculations: sum, table generation, prime check, factor listing, digit sum, and Armstrong number check.
 
----
-
-## ⚙️ How to Run
+## How to Run
 
 1. Download the files:
 
    * index.html
+   * style.css
    * script.js
 
 2. Keep them in the same folder.
@@ -21,17 +20,9 @@ The program takes a number as input and performs various calculations such as su
 
 4. Enter a number.
 
-5. Click the **Run** button.
+5. Click the **Run** button to see the output.
 
-6. Open browser console:
-
-   * Right click → Inspect → Console
-
-7. View all outputs there.
-
----
-
-## 🧠 Operations Performed
+## Operations Performed
 
 1. Sum of first n numbers
 2. Multiplication table of n
@@ -40,9 +31,7 @@ The program takes a number as input and performs various calculations such as su
 5. Find sum of digits
 6. Check if number is Armstrong
 
----
-
-## 💡 Example
+## Example
 
 Input: 153
 
@@ -53,17 +42,8 @@ Output:
 * Prime: No
 * Factors: 1, 3, 17, 51, 153
 
----
-
-## 🛠️ Technologies Used
+## Technologies Used
 
 * HTML
 * JavaScript
-
----
-
-## 📁 Files Included
-
-* index.html
-* script.js
-* README.md
+* CSS
