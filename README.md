@@ -1,35 +1,43 @@
 # JavaScript Loops Assignment
 
-##  Project Description
+## About the Project
 
-This project demonstrates the use of loops and conditional statements in JavaScript by performing multiple operations on a given number.
+This project is a simple JavaScript program where I used loops and conditions to perform different operations on a number.
 
-The program takes a number as input and performs various calculations: sum, table generation, prime check, factor listing, digit sum, and Armstrong number check.
+The user enters a number, and the program calculates and displays various results like sum, table, factors, prime check, etc.
 
 ## How to Run
 
-1. Download the files:
+1. Open the project folder
+
+2. Make sure these files are present:
 
    * index.html
-   * style.css
    * script.js
+   * style.css
 
-2. Keep them in the same folder.
+3. Open `index.html` in your browser
 
-3. Open `index.html` in a browser.
+4. Enter a number and click **Run**
 
-4. Enter a number.
+5. The output will be displayed on the screen
 
-5. Click the **Run** button to see the output.
+## What the Program Does
 
-## Operations Performed
+For the given number, it performs:
 
-1. Sum of first n numbers
-2. Multiplication table of n
-3. Check if number is prime
-4. Print all factors
-5. Find sum of digits
-6. Check if number is Armstrong
+* Finds sum of first n numbers
+* Prints multiplication table
+* Checks if the number is prime
+* Finds all factors
+* Finds sum of digits
+* Checks if the number is Armstrong
+
+## Logic Used
+
+* **For loop** → used when number of iterations is known
+* **While loop** → used for digit extraction
+* **If-else** → used for conditions like prime and Armstrong
 
 ## Example
 
@@ -40,10 +48,19 @@ Output:
 * Sum of digits: 9
 * Armstrong: Yes
 * Prime: No
-* Factors: 1, 3, 17, 51, 153
+* Factors: 1 3 17 51 153
 
-## Technologies Used
+---
+
+##  Technologies Used
 
 * HTML
-* JavaScript
 * CSS
+* JavaScript
+
+##  Files
+
+* index.html
+* style.css
+* script.js
+* README.md
